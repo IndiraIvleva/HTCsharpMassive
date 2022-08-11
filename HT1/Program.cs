@@ -4,14 +4,16 @@
 782 -> 8
 918 -> 1*/
 
-int n = new Random().Next(100, 1000);
-Console.WriteLine($"Трехзначное число - {n}");
-int b = n;
-while (n > 100)
+Console.WriteLine("Введите трехзначное число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+if (n < 100 || n > 999)
 {
-    if (n > 100)
-    {
-        n = n / 10;
-    }
+    Console.WriteLine("Число не является трехзначным");
 }
-Console.WriteLine($"Вторая цифра числа {b} - {n % 10}");
+else
+{
+    Console.WriteLine($"Трехзначное число - {n}");
+    int b = n;
+    n = n / 10;
+    Console.WriteLine($"Вторая цифра числа {b} - {n % 10}");
+}
